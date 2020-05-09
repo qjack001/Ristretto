@@ -1,0 +1,379 @@
+.light-theme
+{
+	--background: #ffffff;
+	--color: #050505;
+	--accent-color: #E12D19;
+	--secondary-background: rgba(0, 0, 0, 0.08); /* for secondary backgrounds (code, etc) */
+	--secondary-color: rgba(0, 0, 0, 0.5); /* for light, secondary text */
+	--transparent-background: rgba(255, 255, 255, 0.3); /* used for header background and editor button hover */
+}
+
+* 
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-size-adjust: 100%;
+	-webkit-touch-callout: none;
+}
+
+*:focus
+{
+	outline: none;
+}
+
+*::before, *::after 
+{
+	box-sizing: border-box;
+}
+
+::selection
+{
+	background: var(--accent-color);
+	color: var(--background);
+}
+
+html 
+{
+	font-family: 'IBM Plex Sans', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 13px;
+	color: var(--color);
+	background: var(--background);
+	line-height: 1.5;
+	letter-spacing: 0.03em;
+	text-rendering: optimizeLegibility; 
+	-webkit-font-smoothing: antialiased;    
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings:"kern" 1;
+	-ms-font-feature-settings:"kern" 1;
+	-o-font-feature-settings:"kern" 1;
+	-webkit-font-feature-settings:"kern" 1;
+	font-feature-settings:"kern" 1;
+	font-kerning: normal; 
+}
+
+body 
+{
+	margin: 0;
+	padding: 12rem 3ch;
+}
+
+a
+{
+	color: var(--accent-color);
+	cursor: pointer;
+	text-decoration: none;
+}
+
+h1, h2, h3, p, ul, ol, pre, blockquote 
+{
+	margin: 1rem 0;
+}
+
+h1:first-child, h2:first-child, h3:first-child, p:first-child, ul:first-child, ol:first-child, pre:first-child, blockquote:first-child 
+{
+	margin-top: 0;
+}
+
+h1:last-child, h2:last-child, h3:last-child, p:last-child, ul:last-child, ol:last-child, pre:last-child, blockquote:last-child 
+{
+	margin-bottom: 0;
+}
+
+h1, h2, h3 
+{
+	line-height: 1.3;
+	font-weight: normal;
+}
+
+header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: var(--transparent-background);
+	backdrop-filter: blur(8px);
+	padding: 0.8rem 3ch;
+	z-index: 20;
+	transition: box-shadow 0.4s ease;
+	box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+header.scrolled
+{
+	box-shadow: 0px 0px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+header button
+{
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+	border: none;
+	cursor: pointer;
+	fill: var(--secondary-color);
+	float: right;
+	max-height: 24px;
+	margin: 0;
+	padding: 3px;
+}
+
+header button:hover
+{
+	fill: var(--accent-color);
+}
+
+.logo
+{
+	font-size: 0.8rem;
+	user-select: none;
+	display: inline-block;
+	font-weight: bold;
+	margin: 0;
+	color: var(--secondary-color);
+}
+
+.logo:hover
+{
+	color: var(--accent-color);
+}
+
+img.logo
+{
+	width: 24px;
+	height: 24px;
+	float: left;
+	transform: translateY(-2px);
+	margin-right: 1ch;
+	opacity: 0.8;
+}
+
+h1.logo
+{
+	text-transform: uppercase;
+	letter-spacing: 0.1ch;
+	line-height: 24px;
+	color: inherit;
+}
+
+.editor 
+{
+	position: relative;
+	max-width: 80ch;
+	margin: 0 auto 5rem auto;
+}
+
+.editor__content 
+{
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+.editor__content * 
+{
+	caret-color: currentColor;
+}
+
+.editor__content pre 
+{
+	padding: 0.7rem 1rem;
+	border-radius: 3px;
+	background: var(--secondary-background);
+	color: var(--color);
+	overflow-x: auto;
+}
+
+.editor__content pre code 
+{
+	display: block;
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 0.87rem;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.editor__content p code 
+{
+	padding: 0.13rem 0.4rem;
+	border-radius: 3px;
+	font-size: 0.87rem;
+	background: var(--secondary-background);
+	color: var(--color);
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.editor__content ul, .editor__content ol 
+{
+	padding-left: 1rem;
+}
+
+.editor__content li > p, .editor__content li > ol, .editor__content li > ul 
+{
+	margin: 0;
+}
+
+.editor__content blockquote 
+{
+	border-left: 3px solid;
+	border-color: var(--secondary-background);
+	color: var(--secondary-color);
+	padding-left: 0.8rem;
+	font-style: italic;
+}
+
+.editor__content blockquote p 
+{
+	margin: 0;
+}
+
+
+
+
+/* not yet supported */
+
+.editor__content img 
+{
+	max-width: 100%;
+	border-radius: 3px;
+}
+
+.editor__content table 
+{
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+
+.editor__content table td, .editor__content table th 
+{
+	min-width: 1em;
+	border: 2px solid grey;
+	padding: 3px 5px;
+	vertical-align: top;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.editor__content table td > *, .editor__content table th > *
+{
+	margin-bottom: 0;
+}
+
+.editor__content table th 
+{
+	font-weight: bold;
+	text-align: left;
+}
+
+.editor__content table .selectedCell:after 
+{
+	z-index: 2;
+	position: absolute;
+	content: "";
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(200, 200, 255, 0.4);
+	pointer-events: none;
+}
+
+.editor__content table .column-resize-handle 
+{
+	position: absolute;
+	right: -2px;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	z-index: 20;
+	background-color: #adf;
+	pointer-events: none;
+}
+
+.editor__content .tableWrapper 
+{
+	margin: 1em 0;
+	overflow-x: auto;
+}
+
+.editor__content .resize-cursor 
+{
+	cursor: ew-resize;
+	cursor: col-resize;
+}
+
+/* end of unsupported */
+
+
+
+.menububble 
+{
+	position: absolute;
+	display: flex;
+	z-index: 20;
+	background: var(--color);
+	color: var(--background);
+	border-radius: 3px;
+	padding: 4px;
+	margin-bottom: 8px;
+	transform: translateX(-50%);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.2s, visibility 0.2s;
+}
+
+.menububble.is-active 
+{
+	opacity: 1;
+	visibility: visible;
+}
+
+.menububble__button 
+{
+	display: inline-flex;
+	background: transparent;
+	border: 0;
+	color: var(--background);
+	padding: 0.2rem 0.5rem;
+	margin-right: 0.2rem;
+	border-radius: 100%;
+	opacity: 0.9;
+	cursor: pointer;
+}
+
+.menububble__button:last-child
+{
+	margin-right: 0;
+}
+
+.menububble__button:hover 
+{
+	background-color: var(--transparent-background);
+	opacity: 1;
+}
+
+.menububble__button.is-active 
+{
+	background-color: var(--accent-color);
+	opacity: 1;
+}
+
+.menububble__form 
+{
+	display: flex;
+	align-items: center;
+}
+
+.menububble__input 
+{
+	font: inherit;
+	border: none;
+	background: transparent;
+	color: #fff;
+}
