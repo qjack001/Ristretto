@@ -60,6 +60,7 @@ export default
 	mounted() 
 	{
 		window.addEventListener('scroll', this.updateScroll);
+		this.setTheme(this.$storage.get('theme'));
 	},
 	methods: 
 	{
@@ -75,6 +76,7 @@ export default
 		{
 			document.body.className = themeName + "-theme";
 			this.colorTheme = themeName;
+			this.$storage.set('theme', themeName);
 		}
 	},
 	computed:

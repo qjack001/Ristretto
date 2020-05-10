@@ -73,6 +73,7 @@
 		},
 		data() 
 		{
+			let vue = this;
 			return {
 				keepInBounds: true,
 				editor: new Editor({
@@ -105,8 +106,7 @@
                             showOnlyCurrent: true,
                         }),
 					],
-					content: ``,
-                    
+					content: vue.$storage.get('content'),
                 }),
                 linkUrl: null,
                 linkMenuIsActive: false,
