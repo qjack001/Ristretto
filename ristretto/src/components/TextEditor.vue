@@ -5,7 +5,7 @@
                 <form class="menububble__form" v-if="linkMenuIsActive" @submit.prevent="setLinkUrl(commands.link, linkUrl)">
                     <input class="menububble__input" type="text" v-model="linkUrl" placeholder="https://" ref="linkInput" @keydown.esc="hideLinkMenu"/>
                     <button class="menububble__button" @click="setLinkUrl(commands.link, null)" type="button">
-                        <icon name="remove" />
+                        <icon name="remove">remove</icon>
                     </button>
                 </form>
                 <template v-else>
@@ -18,11 +18,11 @@
                     </button>
 
                     <button class="menububble__button" :class="{ 'is-active': isActive.underline() }" @click="commands.underline">
-                        <icon name="italic">underline</icon>
+                        <icon name="underline">underline</icon>
                     </button>
 
                     <button class="menububble__button" :class="{ 'is-active': isActive.strike() }" @click="commands.strike">
-                        <icon name="italic">strike</icon>
+                        <icon name="strike">strike</icon>
                     </button>
 
                     <button class="menububble__button" :class="{ 'is-active': isActive.code() }" @click="commands.code">
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-	// import Icon from 'Components/Icon'
+	import Icon from './Icon.vue'
 	import { Editor, EditorContent, EditorMenuBubble } from 'tiptap'
 	import {
 		Blockquote,
@@ -69,7 +69,7 @@
 		{
 			EditorContent,
 			EditorMenuBubble,
-			// Icon,
+			Icon,
 		},
 		data() 
 		{
