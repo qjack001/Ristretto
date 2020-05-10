@@ -20,12 +20,22 @@
 
 .sand-theme
 {
-	--background: #f4e9b0;
+	--background: #d6cfac;
     --color: #3e2e2e;
     --accent-color: #0033ff;
-    --secondary-background: rgba(89, 0, 0, 0.1);
+    --secondary-background: rgba(119, 69, 53, 0.1);
     --secondary-color: rgba(38, 0, 0, 0.6);
-    --transparent-background: hsla(50, 76%, 82%, 0.3);
+    --transparent-background: rgba(166, 159, 122, 0.3);
+}
+
+.sea-theme
+{
+	--background: #264a4f;
+    --color: #a3c2a2;
+    --accent-color: #d17659;
+    --secondary-background: rgba(163, 194, 162, 0.2);
+    --secondary-color: rgba(163, 194, 162, 0.6);
+    --transparent-background: hsla(187, 35%, 23%, 0.3);
 }
 
 * 
@@ -170,9 +180,9 @@ header > button:hover
 
 header > button.clicked
 {
-	-webkit-transform: rotate(30deg);
-	    -ms-transform: rotate(30deg);
-	        transform: rotate(30deg);
+	-webkit-transform: rotate(60deg);
+	    -ms-transform: rotate(60deg);
+	        transform: rotate(60deg);
 	fill: var(--accent-color);
 }
 
@@ -267,19 +277,50 @@ img.logo
 	border: none;
 	-webkit-box-shadow: 0px 0px 0px 3px var(--secondary-background);
 	        box-shadow: 0px 0px 0px 3px var(--secondary-background);
-	font-size: 0;
 	width: 24px;
 	height: 24px;
 	background: #555;
 	cursor: pointer;
 	margin-right: 1rem;
 	margin-left: 3px;
+	position: relative;
 }
 
 .theme-btn.selected
 {
 	-webkit-box-shadow: 0px 0px 0px 3px var(--accent-color);
 	        box-shadow: 0px 0px 0px 3px var(--accent-color);
+}
+
+[data-theme]::before 
+{
+	content: attr(data-theme);
+	display: block;
+	background: var(--color);
+	color: var(--background);
+	font-size: 1rem;
+	width: 50px;
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+	border-radius: 3px;
+	padding: 4px;
+	position: absolute;
+	top: 28px;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.theme-btn[data-theme]:hover::before 
+{
+	opacity: 1;
 }
 
 h1.logo

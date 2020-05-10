@@ -17,9 +17,10 @@
 				</section>
 				<section>
 					<h3>Theme</h3>
-					<button :style="{ background: '#fff' }" :class="(theme == 'light') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('light')">Light theme</button>
-					<button :style="{ background: '#151515' }" :class="(theme == 'dark') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('dark')">Dark theme</button>
-					<button :style="{ background: '#f4e9b0' }" :class="(theme == 'sand') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('sand')">Sand theme</button>
+					<button :style="{ background: '#fff' }" :class="(theme == 'light') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('light')" data-theme="Light"></button>
+					<button :style="{ background: '#151515' }" :class="(theme == 'dark') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('dark')" data-theme="Dark"></button>
+					<button :style="{ background: '#d6cfac' }" :class="(theme == 'sand') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('sand')" data-theme="Sand"></button>
+					<button :style="{ background: '#264a4f' }" :class="(theme == 'sea') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('sea')" data-theme="Deep-Sea"></button>
 				</section>
 				<section>
 					<h3>Markdown Guide</h3>
