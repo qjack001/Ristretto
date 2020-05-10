@@ -551,7 +551,7 @@ blockquote
 	padding-left: 1ch;
 }
 
-svg
+.menububble svg
 {
 	fill: var(--background);
 	width: 18px;
