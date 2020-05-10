@@ -105,7 +105,7 @@ header.scrolled
 	box-shadow: 0px 0px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
-header button
+header > button
 {
 	background: transparent;
 	outline: none;
@@ -117,10 +117,17 @@ header button
 	max-height: 24px;
 	margin: 0;
 	padding: 3px;
+	transition: transform 0.2s ease;
 }
 
-header button:hover
+header > button:hover
 {
+	fill: var(--accent-color);
+}
+
+header > button.clicked
+{
+	transform: rotate(30deg);
 	fill: var(--accent-color);
 }
 
@@ -149,6 +156,52 @@ img.logo
 	opacity: 0.8;
 }
 
+.settings
+{
+	user-select: none;
+	overflow: hidden;
+}
+
+.settings.closed
+{
+	opacity: 0;
+	max-height: 0;
+	transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.settings.open
+{
+	opacity: 1;
+	max-height: calc(100vh - calc(1.6rem + 24px));
+	transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+.full-height
+{
+	height: calc(100vh - calc(1.6rem + 24px));
+	padding: 0 0 2rem;
+	overflow: scroll;
+}
+
+.settings section
+{
+	max-width: 80ch;
+	margin: 0 auto 3rem;
+}
+
+.settings .grid
+{
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-auto-rows: 1fr;
+}
+
+.settings .grid p:first-child, .settings .grid p, .settings .grid blockquote
+{
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+
 h1.logo
 {
 	text-transform: uppercase;
@@ -162,6 +215,15 @@ h1.logo
 	position: relative;
 	max-width: 80ch;
 	margin: 0 auto 5rem auto;
+}
+
+.editor p.is-editor-empty:first-child::before 
+{
+	content: attr(data-empty-text);
+	float: left;
+	color:var(--secondary-color);
+	pointer-events: none;
+	height: 0;
 }
 
 .editor__content 
@@ -185,7 +247,7 @@ h1.logo
 	overflow-x: auto;
 }
 
-.editor__content pre code 
+.editor__content pre code
 {
 	display: block;
 	font-family: 'IBM Plex Mono', monospace;
@@ -194,7 +256,7 @@ h1.logo
 	font-style: normal;
 }
 
-.editor__content p code 
+.editor__content p code, code
 {
 	padding: 0.13rem 0.4rem;
 	border-radius: 3px;
@@ -216,7 +278,7 @@ h1.logo
 	margin: 0;
 }
 
-.editor__content blockquote 
+blockquote 
 {
 	border-left: 3px solid;
 	border-color: var(--secondary-background);
@@ -230,17 +292,24 @@ h1.logo
 	margin: 0;
 }
 
-
-
-
-/* not yet supported */
-
 .editor__content img 
 {
 	max-width: 100%;
-	border-radius: 3px;
+	border-radius: 6px;
+    max-height: 30rem;
+    display: block;
+    margin: 2rem auto;
+	border: 3px solid;
+	border-color: var(--background);
 }
 
+.editor__content img.ProseMirror-selectednode 
+{
+	border-color: var(--accent-color);
+}
+
+
+/* unsupported */
 .editor__content table 
 {
 	border-collapse: collapse;
@@ -310,7 +379,13 @@ h1.logo
 
 /* end of unsupported */
 
-
+.editor__content hr
+{
+	border: none;
+    border-top: 2px solid;
+    border-color: var(--secondary-background);
+    margin: 20px 0;
+}
 
 .menububble 
 {
