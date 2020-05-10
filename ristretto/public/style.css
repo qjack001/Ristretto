@@ -299,6 +299,7 @@ img.logo
 	background: var(--color);
 	color: var(--background);
 	font-size: 1rem;
+	box-sizing: content-box;
 	width: 50px;
 	width: -webkit-max-content;
 	width: -moz-max-content;
