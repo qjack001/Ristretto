@@ -13,13 +13,13 @@
 		<div :class="getSettingsVisible ? 'settings open' : 'settings closed'">
 			<div class="full-height">
 				<section>
-					<p><em>a small but mighty notepad.</em></p>
+					<p :style="{ opacity: 0.5 }"><em>a small but mighty notepad.</em></p>
 				</section>
 				<section>
 					<h3>Theme</h3>
-					<button>1</button>
-					<button>2</button>
-					<button>3</button>
+					<button :style="{ background: '#fff' }" :class="(theme == 'light') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('light')">Light theme</button>
+					<button :style="{ background: '#151515' }" :class="(theme == 'dark') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('dark')">Dark theme</button>
+					<button :style="{ background: '#f4e9b0' }" :class="(theme == 'sand') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('sand')">Sand theme</button>
 				</section>
 				<section>
 					<h3>Markdown Guide</h3>
@@ -52,7 +52,8 @@ export default
 	{
 		return {	
 			scrollPosition: 0,
-			settingsVisible: false
+			settingsVisible: false,
+			colorTheme: 'light'
         }
 	},
 	mounted() 
@@ -68,6 +69,11 @@ export default
 		showSettings: function()
 		{
 			this.settingsVisible = !this.settingsVisible;
+		},
+		setTheme(themeName)
+		{
+			document.body.className = themeName + "-theme";
+			this.colorTheme = themeName;
 		}
 	},
 	computed:
@@ -79,6 +85,10 @@ export default
 		getSettingsVisible: function()
 		{
 			return this.settingsVisible;
+		},
+		theme: function()
+		{
+			return this.colorTheme;
 		}
 	},
 	beforeDestroy() 

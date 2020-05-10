@@ -8,6 +8,26 @@
 	--transparent-background: rgba(255, 255, 255, 0.3); /* used for header background and editor button hover */
 }
 
+.dark-theme
+{
+	--background: #1f1f1f;
+	--color: #d4d4d4;
+	--accent-color: #f48282;
+	--secondary-background: rgba(255, 255, 255, 0.15);
+	--secondary-color: rgba(255, 255, 255, 0.6);
+	--transparent-background: rgba(0, 0, 0, 0.3);
+}
+
+.sand-theme
+{
+	--background: #f4e9b0;
+    --color: #3e2e2e;
+    --accent-color: #0033ff;
+    --secondary-background: rgba(89, 0, 0, 0.1);
+    --secondary-color: rgba(38, 0, 0, 0.6);
+    --transparent-background: hsla(50, 76%, 82%, 0.3);
+}
+
 * 
 {
 	margin: 0;
@@ -37,8 +57,6 @@ html
 {
 	font-family: 'IBM Plex Sans', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	font-size: 13px;
-	color: var(--color);
-	background: var(--background);
 	line-height: 1.5;
 	letter-spacing: 0.03em;
 	text-rendering: optimizeLegibility; 
@@ -56,6 +74,8 @@ body
 {
 	margin: 0;
 	padding: 12rem 3ch;
+	color: var(--color);
+	background: var(--background);
 }
 
 a
@@ -159,7 +179,7 @@ img.logo
 .settings
 {
 	user-select: none;
-	overflow: hidden;
+	overflow-y: hidden;
 }
 
 .settings.closed
@@ -180,7 +200,7 @@ img.logo
 {
 	height: calc(100vh - calc(1.6rem + 24px));
 	padding: 0 0 2rem;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .settings section
@@ -200,6 +220,25 @@ img.logo
 {
 	margin-top: 1rem;
 	margin-bottom: 0;
+}
+
+.theme-btn
+{
+	border-radius: 100%;
+	border: none;
+	box-shadow: 0px 0px 0px 3px var(--secondary-background);
+	font-size: 0;
+	width: 24px;
+	height: 24px;
+	background: #555;
+	cursor: pointer;
+	margin-right: 1rem;
+	margin-left: 3px;
+}
+
+.theme-btn.selected
+{
+	box-shadow: 0px 0px 0px 3px var(--accent-color);
 }
 
 h1.logo
@@ -256,7 +295,7 @@ h1.logo
 	font-style: normal;
 }
 
-.editor__content p code, code
+.editor__content p code, p > code
 {
 	padding: 0.13rem 0.4rem;
 	border-radius: 3px;
