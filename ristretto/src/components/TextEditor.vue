@@ -107,7 +107,7 @@
                         }),
 					],
 					content: vue.$storage.get('content'),
-                }),
+					onUpdate: ({ getHTML }) => vue.$storage.set('content', getHTML()) }),
                 linkUrl: null,
                 linkMenuIsActive: false,
             }
