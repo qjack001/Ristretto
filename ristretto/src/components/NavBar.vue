@@ -21,6 +21,8 @@
 					<button :style="{ background: '#151515' }" :class="(theme == 'dark') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('dark')" data-theme="Dark"></button>
 					<button :style="{ background: '#d6cfac' }" :class="(theme == 'sand') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('sand')" data-theme="Sand"></button>
 					<button :style="{ background: '#264a4f' }" :class="(theme == 'sea') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('sea')" data-theme="Deep-Sea"></button>
+					<button :style="{ background: '#8a3a1b' }" :class="(theme == 'caramel') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('caramel')" data-theme="Caramel"></button>
+					<button :style="{ background: '#c5c5c5' }" :class="(theme == 'concrete') ? 'theme-btn selected' : 'theme-btn'" @click="setTheme('concrete')" data-theme="Concrete"></button>
 				</section>
 				<section>
 					<h3>Markdown Guide</h3>

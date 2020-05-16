@@ -38,6 +38,26 @@
     --transparent-background: hsla(187, 35%, 23%, 0.3);
 }
 
+.caramel-theme
+{
+	--background: #8a3a1b;
+	--color: #f68d2d;
+	--accent-color: #f7e9d6;
+	--secondary-background: rgba(179, 90, 27, 0.4);
+	--secondary-color: rgba(246, 141, 45, 0.6);
+	--transparent-background: rgba(152, 73, 32, 0.5);
+}
+
+.concrete-theme
+{
+	--background: #c5c5c5;
+	--color: rgba(69, 69, 69, 1);
+	--accent-color: #ee4d00;
+	--secondary-background: rgba(255, 255, 255, 0.4);
+	--secondary-color: rgba(69, 69, 69, 0.6);
+	--transparent-background: rgba(193, 193, 193, 0.5);
+}
+
 * 
 {
 	margin: 0;
