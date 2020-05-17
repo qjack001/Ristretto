@@ -438,9 +438,9 @@ blockquote
 {
 	max-width: 100%;
 	border-radius: 6px;
-    max-height: 30rem;
-    display: block;
-    margin: 2rem auto;
+	max-height: 30rem;
+	display: block;
+	margin: 2rem auto 0;
 	border: 3px solid;
 	border-color: var(--background);
 }
@@ -525,9 +525,9 @@ blockquote
 .editor__content hr
 {
 	border: none;
-    border-top: 2px solid;
-    border-color: var(--secondary-background);
-    margin: 20px 0;
+	border-top: 2px solid;
+	border-color: var(--secondary-background);
+	margin: 20px 0;
 }
 
 .menububble 
