@@ -10,12 +10,12 @@
 
 .dark-theme
 {
-	--background: #1f1f1f;
-	--color: #d4d4d4;
-	--accent-color: #f48282;
-	--secondary-background: rgba(255, 255, 255, 0.15);
-	--secondary-color: rgba(255, 255, 255, 0.6);
-	--transparent-background: rgba(0, 0, 0, 0.3);
+	--background: #273134;
+	--color: rgb(217, 217, 217);
+	--accent-color: #da81ff;
+	--secondary-background: #1e2527;
+	--secondary-color: rgba(175, 175, 175, 0.6);
+	--transparent-background: rgba(39, 49, 52, 0.5)
 }
 
 .sand-theme
